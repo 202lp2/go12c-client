@@ -214,9 +214,9 @@ debes tener una tabla y modifica el archivo main.go de ser necesario
 
 	Asullom@DESKTOP-7VTV5IP MSYS ~
 
-> 
+	> 
 
-	$ pacman -S mingw64/mingw-w64-x86_64-pkg-config mingw64/mingw-w64-x86_64-gcc
+		$ pacman -S mingw64/mingw-w64-x86_64-pkg-config mingw64/mingw-w64-x86_64-gcc
 
 
 7. Ejecutar (deberás tener almenos una tabla en tu base de datos oracle)
