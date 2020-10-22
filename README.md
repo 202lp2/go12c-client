@@ -127,10 +127,10 @@ debes tener una tabla y modifica el archivo main.go de ser necesario
 
 
 3. Descargar el ejemplo de https://github.com/202lp2/go12c-client (no vamos usar docker)
-	o descargar solo los archivos \go12c\oci8.pc y \go12c\goapp\main.go, se recomienda descarga también el archivo go.mod 
+	o descargar solo los archivos `\go12c\oci8.pc` y `\go12c\goapp\main.go`, se recomienda descarga también el archivo `go.mod`
 
 	Puede continuar los pasos de manual https://medium.com/@utranand/how-to-connect-golang-to-oracle-on-windows-64-bit-using-go-oci8-library-ab9ed0511b20
-	solo que en vez de C:\MinGW usar MSYS2 pero instalar en C:\msys64 luego todo igual
+	solo que en vez de C:\MinGW usar MSYS2 pero instalar en `C:\msys64` luego todo igual
 	o seguir con los pasos siguientes
 
 
@@ -155,7 +155,7 @@ debes tener una tabla y modifica el archivo main.go de ser necesario
 
 
 
-	Del paso 3, copiar el archivo `oci8.pc` en:
+	Del paso 3, copiar el archivo `oci8.pc` y pegar en:
 
 
 	C:\instantclient_12_2
