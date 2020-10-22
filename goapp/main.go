@@ -1,8 +1,8 @@
 package main
 //ora.NewEnvSrvSes("egibide/12345Abcde@localhost:1521/ORCLCDB")
 //sys/Oradoc_db1@localhost:1521?as=SYSDBA sysdba
-//egibide/12345Abcde@localhost:1521/ORCLCDB
-//go run main.go hrx/123@3.238.28.160:1521/orcl
+//egibide/12345Abcde@localhost:1521/ORCLCDB orclcdb
+//go run main.go hr/123456@3.238.28.160:1521/orcl
 
 import (
     "database/sql"
@@ -32,7 +32,7 @@ func main() {
     defer db.Close()
     fmt.Println()
     var user string
-    err = db.QueryRow("select nombre from cliente").Scan(&user)
+    err = db.QueryRow("select first_name from persons").Scan(&user)
     if err != nil {
         fmt.Println(err)
         return

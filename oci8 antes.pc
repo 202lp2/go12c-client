@@ -1,0 +1,19 @@
+ora=C:/instantclient_12_2
+gcc=C:/msys64/mingw64
+
+oralib=${ora}/sdk/lib/msvc
+orainclude=${ora}/sdk/include
+
+gcclib=${gcc}/lib
+gccinclude=${gcc}/include
+
+glib_genmarshal=glib-genmarshal
+gobject_query=gobject-query
+glib_mkenums=glib-mkenums
+
+Name: OCI
+Description: Oracle database engine
+Version: 12.2
+Libs: -L${oralib} -L${gcclib} -loci
+Libs.private: 
+Cflags: -I${orainclude} -I${gccinclude}
