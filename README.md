@@ -1,8 +1,10 @@
 # Golang conexión con oracle 12c
-Basado en oracle docker-images https://github.com/oracle/docker-images/tree/master/OracleInstantClient/dockerfiles/12.2.0.1
 
-Sigua los siguientes pasos
+Elija una de las 2 opciones 
+
 ##En un contenedor docker 
+
+Basado en oracle docker-images https://github.com/oracle/docker-images/tree/master/OracleInstantClient/dockerfiles/12.2.0.1
 
 1. Con powershell construya el contenedor
 
@@ -73,7 +75,14 @@ debes tener una tabla y modifica el archivo main.go de ser necesario
 	
 	para el caso a. ingrese al contenedor, por ejemplo:
 
-	PS D:\dockr\lp2\varios\oracle12c> docker ps                                                                                                                                                                        CONTAINER ID        IMAGE                                            COMMAND                  CREATED             STATUS                  PORTS                                            NAMES
+	
+
+
+
+	PS D:\dockr\lp2\varios\oracle12c> docker ps 
+
+
+	CONTAINER ID        IMAGE                                            COMMAND                  CREATED             STATUS                  PORTS                                            NAMES
 
 ed56135c0040        store/oracle/database-enterprise:12.2.0.1-slim   "/bin/sh -c '/bin/ba…"   11 hours ago        Up 11 hours (healthy)   0.0.0.0:1521->1521/tcp, 0.0.0.0:5500->5500/tcp   oracle_server
 
