@@ -7,7 +7,7 @@ Sigua los siguientes pasos
 1. Con powershell construya el contenedor
 
 	PS D:\dockr\lp2\go12c> docker-compose up --build -d
-	
+
 	PS D:\dockr\lp2\go12c> docker ps -a
 
 ### 
@@ -24,7 +24,7 @@ Sigua los siguientes pasos
 ###
 3. Queda instalar golang
 para ello descargar golang para linux de https://golang.org/dl/ 
-pegar en la carpeta src para que copia al contenedor
+pegar en la carpeta `goapp` para que copia al contenedor
 y ejecute los siguientes comandos:
 
 	bash-4.2# tar -C /usr/local -xzf /usr/local/go1.15.3.linux-amd64.tar.gz
@@ -47,5 +47,7 @@ debes tener una tabla y modifica el archivo main.go de ser necesario
 
 ###
 * En caso de no conectar debe salir los siguiente:
+
 	ORA-12541: TNS:no listener
+	
 	deberás iniciar el servico del oracle db o revisar la cadena de conexión
