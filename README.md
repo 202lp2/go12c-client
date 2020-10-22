@@ -55,22 +55,32 @@ debes tener una tabla y modifica el archivo main.go de ser necesario
 
 ## En windows, sin contenedor docker
 
-1. Necesitas una base de datos oralce
+1. Necesitas una base de datos oracle, puede ser :
 
 
 	a. Descargar el contenedor para oracle db server, por ejemplo https://github.com/ijaureguialzo/oracle12c
 
 
-	b. Una db en amazon
+	b. O una db orcle en amazon
 
 
-	c. instalar en su equipo
+	c. O instalar en su equipo el oracle server
+
+	d. Otras ....
+
 
 2. Verifique el servicio
 	
-	para el caso a. ingrese al contenedor
+	para el caso a. ingrese al contenedor, por ejemplo:
 
-	> docker exec -it oracle_server bash
+	PS D:\dockr\lp2\varios\oracle12c> docker ps                                                                                                                                                                        CONTAINER ID        IMAGE                                            COMMAND                  CREATED             STATUS                  PORTS                                            NAMES
+
+ed56135c0040        store/oracle/database-enterprise:12.2.0.1-slim   "/bin/sh -c '/bin/ba…"   11 hours ago        Up 11 hours (healthy)   0.0.0.0:1521->1521/tcp, 0.0.0.0:5500->5500/tcp   oracle_server
+
+7b451a034c24        oracle/instantclient:12.2.0.1                    "/bin/sh -c bash"        15 hours ago        Up 15 hours             0.0.0.0:8082->8080/tcp                           go12c_app
+
+
+	> docker exec -it ed56135c0040 bash
 
 	oracle@ed56135c0040 /]$ sqlplus sys/Oradoc_db1 as SYSDBA
 
@@ -91,18 +101,26 @@ debes tener una tabla y modifica el archivo main.go de ser necesario
 
 	------------------------------------ ----------- ------------------------------
 
-	service_names                        string      ORCLCDB.localdomain
+	service_names                        string      `ORCLCDB.localdomain`
 
 	SQL>                                                                    
 
 
 3. Descargar el ejemplo de https://github.com/202lp2/go12c-client (no vamos usar docker)
+	o descargar solo los archivos \go12c\oci8.pc y \go12c\goapp\main.go, se recomienda descarga también el archivo go.mod 
 
-4. Configurar el cliente de oracle en la unidad C:\instantclient_12_2
-	descargar y descomprimir
+	Puede continuar los pasos de manual https://medium.com/@utranand/how-to-connect-golang-to-oracle-on-windows-64-bit-using-go-oci8-library-ab9ed0511b20
+	solo que en vez de C:\MinGW usar MSYS2 pero instalar en C:\msys64 luego todo igual
+	o seguir con los pasos siguientes
 
-	seguir este manual https://medium.com/@utranand/how-to-connect-golang-to-oracle-on-windows-64-bit-using-go-oci8-library-ab9ed0511b20
-	solo que en vez de C:\MinGW usar msys2 pero instalar en C:\msys64 luego todo igual
+
+
+4. Configurar el cliente de oracle la versión 12.2 en la unidad C:\instantclient_12_2
+
+	Descargar : 
+
+	https://www.oracle.com/database/technologies/instant-client/winx64-64-downloads.html 
+	
 
 	instantclient-basic-windows.x64-12.2.0.1.0.zip
 
@@ -111,30 +129,74 @@ debes tener una tabla y modifica el archivo main.go de ser necesario
 	instantclient-sqlplus-windows.x64-12.2.0.1.0.zip
 
 
-	renombre el archivo `oci8 para windows.pc` a `oci8.pc` (o usar el mismo `oci8.pc` de la raiz del repositorio)  y pegarlo dentro de C:\instantclient_12_2
+	Extraer en:
+
+	C:\instantclient_12_2
+
+
+
+	Del paso 3, copiar el archivo `oci8.pc` en:
+
+
+	C:\instantclient_12_2
+
+	
+	File oci8.pc at :
+
+	C:\instantclient_12_2\oci8.pc
+
+
+
+	Luego configure las variables de entorno:
+
 
 	setx PKG_CONFIG_PATH "C:\instantclient_12_2"
 
+
 	en el path agregar:
 
-	C:\instantclient_12_2
-	
-	C:\msys64\mingw64\bin
+	C:\instantclient_12_2	
 	
 	C:\pkg-config\bin
 
+	C:\msys64\mingw64\bin
 
 
-	instalar el MSYS2 https://www.msys2.org/
+5. Administrador de configuración de paquetes `pkg-config`:
 
-	y ejecutar
+	Descargar : 
+
+	http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/pkg-config_0.26-1_win32.zip
+
+	http://ftp.gnome.org/pub/gnome/binaries/win32/glib/2.28/glib_2.28.8-1_win32.zip
+
+	http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/gettext-runtime_0.18.1.1-2_win32.zip
+
+	
+	Extraer en:
+
+	 C: \pkg-config
+
+
+6. Instalar el MSYS2
+	
+	Descargar : 
+ 	
+ 	https://www.msys2.org/
+
+ 	Instalar `msys2-x86_64-20200903.exe` en: (instalation folder)
+
+	C: \msys64
+
+
+	Ejecutar en MSYS2: 
 
 	Asullom@DESKTOP-7VTV5IP MSYS ~
 
 	$ pacman -S mingw64/mingw-w64-x86_64-pkg-config mingw64/mingw-w64-x86_64-gcc
 
 
-5. Ejecutar 
+7. Ejecutar (deberás tener almenos una tabla en tu base de datos oracle)
 
 	PS D:\dockr\lp2\go12c\goapp> go run main.go sys/Oradoc_1@localhost:1521/orclcdb.localdomain?as=SYSDBA
 
