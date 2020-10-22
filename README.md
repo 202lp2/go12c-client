@@ -7,14 +7,18 @@ Sigua los siguientes pasos
 1. Con powershell construya el contenedor
 
 	PS D:\dockr\lp2\go12c> docker-compose up --build -d
+	
 	PS D:\dockr\lp2\go12c> docker ps -a
 
 ### 
 2. Ingrese al contenedor
 
 	PS D:\dockr\lp2\go12c> docker exec -it go12c_app bash
+
 	bash-4.2# go version
+
 	bash: go: command not found
+
 	bash-4.2# 
 
 ###
@@ -24,6 +28,7 @@ pegar en la carpeta src para que copia al contenedor
 y ejecute los siguientes comandos:
 
 	bash-4.2# tar -C /usr/local -xzf /usr/local/go1.15.3.linux-amd64.tar.gz
+
 	bash-4.2# export PATH=$PATH:/usr/local/go/bin 
 
 	bash-4.2# go version
@@ -33,6 +38,7 @@ y ejecute los siguientes comandos:
 debes tener una tabla y modifica el archivo main.go de ser necesario
 
 	bash-4.2# cd usr/local/
+
 	bash-4.2# go run main.go egibide/12345Abcde@localhost:1521/ORCLCDB
 
 	Successful 'as sysdba' connection. Current user is: ELENA
