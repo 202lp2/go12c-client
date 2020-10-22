@@ -100,7 +100,7 @@ debes tener una tabla y modifica el archivo main.go de ser necesario
 	7b451a034c24        oracle/instantclient:12.2.0.1                    "/bin/sh -c bash"        15 hours ago        Up 15 hours             0.0.0.0:8082->8080/tcp                           go12c_app
 
 
-	docker exec -it ed56135c0040 bash
+	PS D:\dockr\lp2\varios\oracle12c> docker exec -it ed56135c0040 bash
 
 	oracle@ed56135c0040 /]$ sqlplus sys/Oradoc_db1 as SYSDBA
 
@@ -169,7 +169,7 @@ debes tener una tabla y modifica el archivo main.go de ser necesario
 
 	Luego configure las variables de entorno:
 
-
+	> 
 	setx PKG_CONFIG_PATH "C:\instantclient_12_2"
 
 
