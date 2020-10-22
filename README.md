@@ -57,9 +57,12 @@ debes tener una tabla y modifica el archivo main.go de ser necesario
 
 1. Necesitas una base de datos oralce
 
+
 	a. Descargar el contenedor para oracle db server, por ejemplo https://github.com/ijaureguialzo/oracle12c
 
+
 	b. Una db en amazon
+
 
 	c. instalar en su equipo
 
@@ -74,17 +77,22 @@ debes tener una tabla y modifica el archivo main.go de ser necesario
 	SQL*Plus: Release 12.2.0.1.0 Production on Thu Oct 22 05:35:14 2020
 
 
+
 	Copyright (c) 1982, 2016, Oracle.  All rights reserved.
 
 
 	Connected to:
+
 	Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
 
 	SQL>  show parameter service_names
 
 	NAME                                 TYPE        VALUE
+
 	------------------------------------ ----------- ------------------------------
+
 	service_names                        string      ORCLCDB.localdomain
+
 	SQL>                                                                    
 
 
@@ -97,8 +105,11 @@ debes tener una tabla y modifica el archivo main.go de ser necesario
 	solo que en vez de C:\MinGW usar msys2 pero instalar en C:\msys64 luego todo igual
 
 	instantclient-basic-windows.x64-12.2.0.1.0.zip
+
 	instantclient-sdk-windows.x64-12.2.0.1.0.zip
+
 	instantclient-sqlplus-windows.x64-12.2.0.1.0.zip
+
 
 	renombre el archivo `oci8 para windows.pc` a `oci8.pc` (o usar el mismo `oci8.pc` de la raiz del repositorio)  y pegarlo dentro de C:\instantclient_12_2
 
@@ -115,8 +126,11 @@ debes tener una tabla y modifica el archivo main.go de ser necesario
 
 
 	instalar el MSYS2 https://www.msys2.org/
+
 	y ejecutar
+
 	Asullom@DESKTOP-7VTV5IP MSYS ~
+
 	$ pacman -S mingw64/mingw-w64-x86_64-pkg-config mingw64/mingw-w64-x86_64-gcc
 
 
@@ -129,6 +143,7 @@ debes tener una tabla y modifica el archivo main.go de ser necesario
 	PS D:\dockr\lp2\go12c\goapp> go run main.go egibide/12345Abcde@localhost:1521/ORCLCDB.localdomain
 
 	Successful 'as sysdba' connection. Current user is: ww
+
 	PS D:\dockr\lp2\go12c\goapp>
 
 
