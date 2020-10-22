@@ -121,7 +121,7 @@ debes tener una tabla y modifica el archivo main.go de ser necesario
 
 	------------------------------------ ----------- ------------------------------
 
-	service_names                        string      `ORCLCDB.localdomain`
+	service_names                        string      ORCLCDB.localdomain
 
 	SQL>                                                                    
 
@@ -170,7 +170,8 @@ debes tener una tabla y modifica el archivo main.go de ser necesario
 	Luego configure las variables de entorno:
 
 	> 
-	setx PKG_CONFIG_PATH "C:\instantclient_12_2"
+
+		setx PKG_CONFIG_PATH "C:\instantclient_12_2"
 
 
 	en el path agregar:
@@ -212,6 +213,8 @@ debes tener una tabla y modifica el archivo main.go de ser necesario
 	Ejecutar en MSYS2: 
 
 	Asullom@DESKTOP-7VTV5IP MSYS ~
+
+> 
 
 	$ pacman -S mingw64/mingw-w64-x86_64-pkg-config mingw64/mingw-w64-x86_64-gcc
 
