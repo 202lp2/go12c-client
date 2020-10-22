@@ -95,12 +95,12 @@ debes tener una tabla y modifica el archivo main.go de ser necesario
 
 	CONTAINER ID        IMAGE                                            COMMAND                  CREATED             STATUS                  PORTS                                            NAMES
 
-ed56135c0040        store/oracle/database-enterprise:12.2.0.1-slim   "/bin/sh -c '/bin/ba…"   11 hours ago        Up 11 hours (healthy)   0.0.0.0:1521->1521/tcp, 0.0.0.0:5500->5500/tcp   oracle_server
+	ed56135c0040        store/oracle/database-enterprise:12.2.0.1-slim   "/bin/sh -c '/bin/ba…"   11 hours ago        Up 11 hours (healthy)   0.0.0.0:1521->1521/tcp, 0.0.0.0:5500->5500/tcp   oracle_server
 
-7b451a034c24        oracle/instantclient:12.2.0.1                    "/bin/sh -c bash"        15 hours ago        Up 15 hours             0.0.0.0:8082->8080/tcp                           go12c_app
+	7b451a034c24        oracle/instantclient:12.2.0.1                    "/bin/sh -c bash"        15 hours ago        Up 15 hours             0.0.0.0:8082->8080/tcp                           go12c_app
 
 
-	> docker exec -it ed56135c0040 bash
+	docker exec -it ed56135c0040 bash
 
 	oracle@ed56135c0040 /]$ sqlplus sys/Oradoc_db1 as SYSDBA
 
